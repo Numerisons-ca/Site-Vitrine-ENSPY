@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/ModeToggle';
@@ -14,8 +15,14 @@ const Footer = () => {
           {/* Section Logo et École */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ENSP</span>
+              <div className="relative w-20 h-20">
+                <Image
+                  src="/logos/enspy.png"
+                  alt="Logo ENSP"
+                  fill
+                  className="object-contain"
+                  sizes="48px"
+                />
               </div>
               <div>
                 <h3 className="font-bold text-lg">École Nationale Supérieure</h3>
@@ -128,22 +135,38 @@ const Footer = () => {
       {/* Section logos partenaires */}
       <div className="bg-orange-500 dark:bg-orange-600">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-wrap items-center justify-center space-x-8 space-y-4">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             {/* Logo CTI */}
-            <div className="bg-white rounded p-2">
-              <span className="text-orange-500 font-bold text-xl">CTI</span>
+            <div className="bg-white rounded p-3 h-16 flex items-center">
+              <Image
+                src="/logos/CTI.png"
+                alt="Logo CTI"
+                width={80}
+                height={40}
+                className="object-contain"
+              />
             </div>
             
-            {/* Logo avec étoiles */}
-            <div className="bg-white rounded-full p-2">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <span className="text-orange-500 text-xs">★★★</span>
-              </div>
+            {/* Logo avec étoiles (logo partenaire) */}
+            <div className="bg-white rounded p-3 h-16 flex items-center">
+              <Image
+                src="/logos/partner-logo.png"
+                alt="Logo Partenaire"
+                width={60}
+                height={40}
+                className="object-contain"
+              />
             </div>
             
             {/* Logo REA */}
-            <div className="bg-white rounded p-2">
-              <span className="text-blue-600 font-bold text-xl">REA</span>
+            <div className="bg-white rounded p-3 h-16 flex items-center">
+              <Image
+                src="/images/logos/rea-logo.png"
+                alt="Logo REA"
+                width={80}
+                height={40}
+                className="object-contain"
+              />
             </div>
           </div>
         </div>
